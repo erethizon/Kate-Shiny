@@ -1,14 +1,12 @@
 ---
-title: "Activity"
-author: "Erika"
-date: "8/2/2020"
-output: html_document
+title: "Activity patterns"
+output: html_notebook
 ---
 
 Make a Shiny app that shows activity patterns by species
 ```{r}
 rm(list=ls())
-
+library(shiny)
 library(dplyr)
 library(tidyverse)
 library(tidyr)
@@ -116,3 +114,4 @@ clock24.plot(data, clock, show.grid = T, lwd = 2, line.col = "blue", cex.lab = 0
 shinyApp(ui = ui, server = server)
 
 ```
+
