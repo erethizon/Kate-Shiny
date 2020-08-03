@@ -1,0 +1,118 @@
+---
+title: "Activity"
+author: "Erika"
+date: "8/2/2020"
+output: html_document
+---
+
+Make a Shiny app that shows activity patterns by species
+```{r}
+rm(list=ls())
+
+library(dplyr)
+library(tidyverse)
+library(tidyr)
+library(readr)
+library(lubridate)
+library(chron) #works with chronological objects like dates and times
+library(reshape) #restructures and aggregates data in a flexible way
+library(vegan) #ecological analysis
+library(plotrix) #visualize circular data
+library(ggplot2) #producing graphics
+library(maptools) #produce maps using GIS layers
+
+# First, let's finally figure out this activity chart! Need to load the TEAM library 1.7.R to get the functions we will use to make the activity chart
+source("~/Dropbox/Zooniverse_work/Camera_Trapping_Ch5_Work/TEAM library 1.7.R")
+
+#Now, following the Chapter 5 code, hopefully we can get this work. I think we need the data that came from the species accumulation curve because that has time data associated with the detections. Let's load that data too. 
+masterDF <- read_csv("~/Documents/Kate_ThesisCode/masterDF_test.csv")
+dump<-which(masterDF$bin == "NOTHINGHERE" | masterDF$bin == "SOMETHINGHERE" | masterDF$bin == "HUMAN" | masterDF$bin == "GROUSERUFFED" | masterDF$bin == "CROWORRAVEN" | masterDF$bin == "OTHERBIRD" | masterDF$bin == "DOMESTICDOG" | masterDF$bin == "OWL" | masterDF$bin == "BLUEJAY" | masterDF$bin == "TURKEY" | masterDF$bin == "GOOSEWILD")
+masterDF<-masterDF[-dump,]
+masterDF$Start.Date<- mdy(masterDF$Start.Date)
+masterDF$End.Date<-mdy(masterDF$End.Date)
+masterDF$ndays<- difftime(masterDF$End.Date, masterDF$Start.Date , units = c("days"))
+
+masterDF<-masterDF[,2:11]
+
+
+SpeciesAcc<-masterDF
+SpeciesAcc$Sampling.Event<-2020
+SpeciesAcc<- SpeciesAcc[,-(10)]
+
+
+SpeciesAcc$td.photo<-as.POSIXct(SpeciesAcc$td.photo,format="%Y:%m:%d %H:%M:%S")
+SpeciesAcc$Photo.Date<-mdy(SpeciesAcc$Photo.Date)
+SpeciesAcc$Photo.Time<-hms(SpeciesAcc$Photo.Time)
+
+specActivity<-SpeciesAcc
+
+specActivity$Photo.Time<-period_to_seconds(specActivity$Photo.Time)
+
+activity_24h<-events.hours(specActivity) #Potential error here since we had some NAs. Reporting seconds not 00:00:00
+
+
+
+ui <- fluidPage(
+
+  # App title ----
+  titlePanel("Mammal Distribution by Forset Type"),
+
+  # Sidebar layout with input and output definitions ----
+  sidebarLayout(
+
+    # Sidebar panel for inputs ----
+    sidebarPanel(
+
+      # Input: Slider for the number of bins ----
+      selectInput("species", h3("Choose your Species"),
+                  choices = c("White-tailed Deer", "Chipmunk", "Coyote", "Fisher", "Raccoon", "Red Squirrel", "Other Small Mammal", "Gray Squirrel", "Black Bear", "Red Fox", "Porcupine", "Bobcat", "Opossum", "Weasel", "Striped Skunk", "Flying Squirrel", "Snowshoe Hare", "River Otter", "Mink"), selected = "White-tailed Deer"),
+        
+),
+    # Main panel for displaying outputs ----
+    mainPanel(
+
+      # Output: Histogram ----
+     leafletOutput("activity")
+
+    )
+  )
+)
+
+
+#define server logic ----
+server<-function(input, output) {
+
+  output$activity<-renderPlot({
+    
+    data<-switch(input$species, 
+                      "White-tailed Deer" = activity_24h$DEERWHITETAILED,
+                "Chipmunk" = activity_24h$CHIPMUNK,
+               "Coyote" = activity_24h$COYOTE,
+                "Fisher" = activity_24h$FISHER,
+                "Raccoon" = activity_24h$RACCOON,
+                "Red Squirrel" = activity_24h$SQUIRRELRED,
+              "Gray Squirrel" = activity_24h$SQUIRRELGRAY,
+              "Black Bear" = activity_24h$BLACKBEAR,
+              "Red Fox" = activity_24h$FOXRED,
+              "Porcupine" = activity_24h$PORCUPINE,
+              "Bobcat" = activity_24h$BOBCAT,
+              "Weasel" = activity_24h$WEASEL,
+              "Striped Skunk" = activity_24h$SKUNKSTRIPED,
+              "Flying Squirrel" = activity_24h$SQUIRRELFLYING,
+              "Snowshoe Hare" = activity_24h$SNOWSHOEHARE,
+              "River Otter" = activity_24h$RIVEROTTER,
+              "Mink" = activity_24h$MINK,
+              "Other Small Mammal" = activity_24h$OTHERSMALLMAMMAL,
+              "Opossum" = activity_24h$OPOSSUM)
+
+clock<-c(0:23)
+clock24.plot(data, clock, show.grid = T, lwd = 2, line.col = "blue", cex.lab = 0.5)
+
+})
+
+}
+
+# Run the app ----
+shinyApp(ui = ui, server = server)
+
+```
