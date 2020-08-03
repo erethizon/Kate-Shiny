@@ -20,9 +20,12 @@ library(leaflet)
 library(htmltools)
 ```
 
+NOTE: Let's streamline the data processing by doing it outside of the shiny app and then just calling the final data products in the app.  Use the Rmd file to process the data, save as new .csv files and then call those in app.R
+
+
 Now let's load the data frame we need. This will tell us the total number of species per forest and how many of each species were detected
 ```{r}
-dataFinal <- read_csv("dataFinal.csv")
+dataFinal <- read_csv("Data/CSVs/dataFinal.csv")
 ```
 
 Subset data to remove "Nothing Here" choice
@@ -34,7 +37,7 @@ newData<-dataFinal[-dump,]
 
 Data for trophic tab
 ```{r}
-mammals<- read_csv("mammals.csv")
+mammals<- read_csv("Data/CSVs/mammals.csv")
 mammals<- mammals[,2:16]
 ```
 
@@ -42,7 +45,7 @@ mammals<- mammals[,2:16]
 
 Data for covariates tab
 ```{r}
-Covariates <- read_csv("Covariates.csv")
+Covariates <- read_csv("Data/CSVs/Covariates.csv")
 
 Cov_sum<-Covariates %>% group_by(Forest) %>% summarise(
   Water = mean(P_Water50), Mixed = mean(P_Mixed50), Evergreen = mean(P_Evergreen50), Deciduous = mean(P_Deciduous50), Development = mean(P_Development50), Agriculture = mean(P_Agriculture50), Barren = mean(P_Barren50), Shrub = mean(P_Shrub50), Wetland = mean(P_Wetland50), Herbaceous = mean(P_Herb50)
@@ -64,7 +67,7 @@ value = mean(value)
 For diversity shiny app
 ```{r}
 #Load the data
-Diversity_total <- read_csv("Diversity_total.csv")
+Diversity_total <- read_csv("Data/CSVs/Diversity_total.csv")
 
 #Modify the data to match that from my diversity data in thesis code
 Diversity_total$BC<-replace(Diversity_total$BC, is.na(Diversity_total$BC), 0)
@@ -84,7 +87,7 @@ names(divFinal) <- c("Diversity_Indices", "Forest", "Index")
 
 ```{r}
 #Load shape file 
-Forests<-readOGR("Data/Study Forest Locations.shp", layer = "Study Forest Locations")
+Forests<-readOGR("Data/Shapefiles/Study Forest Locations.shp", layer = "Study Forest Locations")
 
 #Project shape file
 Forests_proj<-spTransform(Forests, CRS("+proj=longlat +datum=WGS84"))

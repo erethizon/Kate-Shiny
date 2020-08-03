@@ -1,3 +1,5 @@
+#put the code that just runs once (e.g. calling data set initially, loading packages, etc) here
+
 ui <- fluidPage(
 
   # App title ----
