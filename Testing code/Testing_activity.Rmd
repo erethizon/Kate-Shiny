@@ -110,7 +110,9 @@ clock<-c(0:24)
     PorcPlot
     
 ```
-So, here's the lesson: don't need TEAM library or activity_24hour thing at all. Use the switch to filter the Sum data frame to the approrpriate species.
+So, here are the lessons: 
+1). Don't need TEAM library or activity_24hour thing at all. Use the switch to filter the Sum data frame to the appropriate species.
+2). A good practice is to go back to the original data and do something you know (like plotting a histogram) to see how the data should look in the circular plot.
 
 
 
