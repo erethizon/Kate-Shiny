@@ -1,5 +1,5 @@
 #put the code here that just needs to run once, e.g. load packages, load data, etc.
-
+library(plotrix)
 ui <- fluidPage(
 
   # App title ----
@@ -20,7 +20,7 @@ ui <- fluidPage(
     mainPanel(
 
       # Output: Histogram ----
-      leafletOutput("activity")
+      plotOutput("activity")
 
     )
   )
@@ -53,7 +53,7 @@ server<-function(input, output) {
                  "Other Small Mammal" = activity_24h$OTHERSMALLMAMMAL,
                  "Opossum" = activity_24h$OPOSSUM)
 
-    clock<-c(0:23)
+    clock<-c(0:24)
     clock24.plot(data, clock, show.grid = T, lwd = 2, line.col = "blue", cex.lab = 0.5)
 
   })

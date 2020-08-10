@@ -1750,12 +1750,22 @@ summary {
 
 <!-- rnb-text-begin -->
 <p>Make a Shiny app that shows activity patterns by species</p>
+<p>Set up project:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdD1scygpKVxubGlicmFyeShzaGlueSlcbmxpYnJhcnkoZHBseXIpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmxpYnJhcnkodGlkeXIpXG5saWJyYXJ5KHJlYWRyKVxubGlicmFyeShsdWJyaWRhdGUpXG5saWJyYXJ5KGNocm9uKSAjd29ya3Mgd2l0aCBjaHJvbm9sb2dpY2FsIG9iamVjdHMgbGlrZSBkYXRlcyBhbmQgdGltZXNcbmxpYnJhcnkocmVzaGFwZSkgI3Jlc3RydWN0dXJlcyBhbmQgYWdncmVnYXRlcyBkYXRhIGluIGEgZmxleGlibGUgd2F5XG5saWJyYXJ5KHZlZ2FuKSAjZWNvbG9naWNhbCBhbmFseXNpc1xubGlicmFyeShwbG90cml4KSAjdmlzdWFsaXplIGNpcmN1bGFyIGRhdGFcbmxpYnJhcnkoZ2dwbG90MikgI3Byb2R1Y2luZyBncmFwaGljc1xubGlicmFyeShtYXB0b29scykgI3Byb2R1Y2UgbWFwcyB1c2luZyBHSVMgbGF5ZXJzXG5cbiMgRmlyc3QsIGxldCdzIGZpbmFsbHkgZmlndXJlIG91dCB0aGlzIGFjdGl2aXR5IGNoYXJ0ISBOZWVkIHRvIGxvYWQgdGhlIFRFQU0gbGlicmFyeSAxLjcuUiB0byBnZXQgdGhlIGZ1bmN0aW9ucyB3ZSB3aWxsIHVzZSB0byBtYWtlIHRoZSBhY3Rpdml0eSBjaGFydFxuc291cmNlKFwifi9Ecm9wYm94L1pvb25pdmVyc2Vfd29yay9DYW1lcmFfVHJhcHBpbmdfQ2g1X1dvcmsvVEVBTSBsaWJyYXJ5IDEuNy5SXCIpXG5cbiNOb3csIGZvbGxvd2luZyB0aGUgQ2hhcHRlciA1IGNvZGUsIGhvcGVmdWxseSB3ZSBjYW4gZ2V0IHRoaXMgd29yay4gSSB0aGluayB3ZSBuZWVkIHRoZSBkYXRhIHRoYXQgY2FtZSBmcm9tIHRoZSBzcGVjaWVzIGFjY3VtdWxhdGlvbiBjdXJ2ZSBiZWNhdXNlIHRoYXQgaGFzIHRpbWUgZGF0YSBhc3NvY2lhdGVkIHdpdGggdGhlIGRldGVjdGlvbnMuIExldCdzIGxvYWQgdGhhdCBkYXRhIHRvby4gXG5tYXN0ZXJERiA8LSByZWFkX2NzdihcIn4vRG9jdW1lbnRzL0thdGVfVGhlc2lzQ29kZS9tYXN0ZXJERl90ZXN0LmNzdlwiKVxuZHVtcDwtd2hpY2gobWFzdGVyREYkYmluID09IFwiTk9USElOR0hFUkVcIiB8IG1hc3RlckRGJGJpbiA9PSBcIlNPTUVUSElOR0hFUkVcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkhVTUFOXCIgfCBtYXN0ZXJERiRiaW4gPT0gXCJHUk9VU0VSVUZGRURcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkNST1dPUlJBVkVOXCIgfCBtYXN0ZXJERiRiaW4gPT0gXCJPVEhFUkJJUkRcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkRPTUVTVElDRE9HXCIgfCBtYXN0ZXJERiRiaW4gPT0gXCJPV0xcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkJMVUVKQVlcIiB8IG1hc3RlckRGJGJpbiA9PSBcIlRVUktFWVwiIHwgbWFzdGVyREYkYmluID09IFwiR09PU0VXSUxEXCIpXG5tYXN0ZXJERjwtbWFzdGVyREZbLWR1bXAsXVxubWFzdGVyREYkU3RhcnQuRGF0ZTwtIG1keShtYXN0ZXJERiRTdGFydC5EYXRlKVxubWFzdGVyREYkRW5kLkRhdGU8LW1keShtYXN0ZXJERiRFbmQuRGF0ZSlcbm1hc3RlckRGJG5kYXlzPC0gZGlmZnRpbWUobWFzdGVyREYkRW5kLkRhdGUsIG1hc3RlckRGJFN0YXJ0LkRhdGUgLCB1bml0cyA9IGMoXCJkYXlzXCIpKVxuXG5tYXN0ZXJERjwtbWFzdGVyREZbLDI6MTFdXG5cblxuU3BlY2llc0FjYzwtbWFzdGVyREZcblNwZWNpZXNBY2MkU2FtcGxpbmcuRXZlbnQ8LTIwMjBcblNwZWNpZXNBY2M8LSBTcGVjaWVzQWNjWywtKDEwKV1cblxuXG5TcGVjaWVzQWNjJHRkLnBob3RvPC1hcy5QT1NJWGN0KFNwZWNpZXNBY2MkdGQucGhvdG8sZm9ybWF0PVwiJVk6JW06JWQgJUg6JU06JVNcIilcblNwZWNpZXNBY2MkUGhvdG8uRGF0ZTwtbWR5KFNwZWNpZXNBY2MkUGhvdG8uRGF0ZSlcblNwZWNpZXNBY2MkUGhvdG8uVGltZTwtaG1zKFNwZWNpZXNBY2MkUGhvdG8uVGltZSlcblxuc3BlY0FjdGl2aXR5PC1TcGVjaWVzQWNjXG5cbnNwZWNBY3Rpdml0eSRQaG90by5UaW1lPC1wZXJpb2RfdG9fc2Vjb25kcyhzcGVjQWN0aXZpdHkkUGhvdG8uVGltZSlcblxuYWN0aXZpdHlfMjRoPC1ldmVudHMuaG91cnMoc3BlY0FjdGl2aXR5KSAjUG90ZW50aWFsIGVycm9yIGhlcmUgc2luY2Ugd2UgaGFkIHNvbWUgTkFzLiBSZXBvcnRpbmcgc2Vjb25kcyBub3QgMDA6MDA6MDBcblxuXG5cbnVpIDwtIGZsdWlkUGFnZShcblxuICAjIEFwcCB0aXRsZSAtLS0tXG4gIHRpdGxlUGFuZWwoXCJNYW1tYWwgRGlzdHJpYnV0aW9uIGJ5IEZvcnNldCBUeXBlXCIpLFxuXG4gICMgU2lkZWJhciBsYXlvdXQgd2l0aCBpbnB1dCBhbmQgb3V0cHV0IGRlZmluaXRpb25zIC0tLS1cbiAgc2lkZWJhckxheW91dChcblxuICAgICMgU2lkZWJhciBwYW5lbCBmb3IgaW5wdXRzIC0tLS1cbiAgICBzaWRlYmFyUGFuZWwoXG5cbiAgICAgICMgSW5wdXQ6IFNsaWRlciBmb3IgdGhlIG51bWJlciBvZiBiaW5zIC0tLS1cbiAgICAgIHNlbGVjdElucHV0KFwic3BlY2llc1wiLCBoMyhcIkNob29zZSB5b3VyIFNwZWNpZXNcIiksXG4gICAgICAgICAgICAgICAgICBjaG9pY2VzID0gYyhcIldoaXRlLXRhaWxlZCBEZWVyXCIsIFwiQ2hpcG11bmtcIiwgXCJDb3lvdGVcIiwgXCJGaXNoZXJcIiwgXCJSYWNjb29uXCIsIFwiUmVkIFNxdWlycmVsXCIsIFwiT3RoZXIgU21hbGwgTWFtbWFsXCIsIFwiR3JheSBTcXVpcnJlbFwiLCBcIkJsYWNrIEJlYXJcIiwgXCJSZWQgRm94XCIsIFwiUG9yY3VwaW5lXCIsIFwiQm9iY2F0XCIsIFwiT3Bvc3N1bVwiLCBcIldlYXNlbFwiLCBcIlN0cmlwZWQgU2t1bmtcIiwgXCJGbHlpbmcgU3F1aXJyZWxcIiwgXCJTbm93c2hvZSBIYXJlXCIsIFwiUml2ZXIgT3R0ZXJcIiwgXCJNaW5rXCIpLCBzZWxlY3RlZCA9IFwiV2hpdGUtdGFpbGVkIERlZXJcIiksXG4gICAgICAgIFxuKSxcbiAgICAjIE1haW4gcGFuZWwgZm9yIGRpc3BsYXlpbmcgb3V0cHV0cyAtLS0tXG4gICAgbWFpblBhbmVsKFxuXG4gICAgICAjIE91dHB1dDogSGlzdG9ncmFtIC0tLS1cbiAgICAgbGVhZmxldE91dHB1dChcImFjdGl2aXR5XCIpXG5cbiAgICApXG4gIClcbilcblxuXG4jZGVmaW5lIHNlcnZlciBsb2dpYyAtLS0tXG5zZXJ2ZXI8LWZ1bmN0aW9uKGlucHV0LCBvdXRwdXQpIHtcblxuICBvdXRwdXQkYWN0aXZpdHk8LXJlbmRlclBsb3Qoe1xuICAgIFxuICAgIGRhdGE8LXN3aXRjaChpbnB1dCRzcGVjaWVzLCBcbiAgICAgICAgICAgICAgICAgICAgICBcIldoaXRlLXRhaWxlZCBEZWVyXCIgPSBhY3Rpdml0eV8yNGgkREVFUldISVRFVEFJTEVELFxuICAgICAgICAgICAgICAgIFwiQ2hpcG11bmtcIiA9IGFjdGl2aXR5XzI0aCRDSElQTVVOSyxcbiAgICAgICAgICAgICAgIFwiQ295b3RlXCIgPSBhY3Rpdml0eV8yNGgkQ09ZT1RFLFxuICAgICAgICAgICAgICAgIFwiRmlzaGVyXCIgPSBhY3Rpdml0eV8yNGgkRklTSEVSLFxuICAgICAgICAgICAgICAgIFwiUmFjY29vblwiID0gYWN0aXZpdHlfMjRoJFJBQ0NPT04sXG4gICAgICAgICAgICAgICAgXCJSZWQgU3F1aXJyZWxcIiA9IGFjdGl2aXR5XzI0aCRTUVVJUlJFTFJFRCxcbiAgICAgICAgICAgICAgXCJHcmF5IFNxdWlycmVsXCIgPSBhY3Rpdml0eV8yNGgkU1FVSVJSRUxHUkFZLFxuICAgICAgICAgICAgICBcIkJsYWNrIEJlYXJcIiA9IGFjdGl2aXR5XzI0aCRCTEFDS0JFQVIsXG4gICAgICAgICAgICAgIFwiUmVkIEZveFwiID0gYWN0aXZpdHlfMjRoJEZPWFJFRCxcbiAgICAgICAgICAgICAgXCJQb3JjdXBpbmVcIiA9IGFjdGl2aXR5XzI0aCRQT1JDVVBJTkUsXG4gICAgICAgICAgICAgIFwiQm9iY2F0XCIgPSBhY3Rpdml0eV8yNGgkQk9CQ0FULFxuICAgICAgICAgICAgICBcIldlYXNlbFwiID0gYWN0aXZpdHlfMjRoJFdFQVNFTCxcbiAgICAgICAgICAgICAgXCJTdHJpcGVkIFNrdW5rXCIgPSBhY3Rpdml0eV8yNGgkU0tVTktTVFJJUEVELFxuICAgICAgICAgICAgICBcIkZseWluZyBTcXVpcnJlbFwiID0gYWN0aXZpdHlfMjRoJFNRVUlSUkVMRkxZSU5HLFxuICAgICAgICAgICAgICBcIlNub3dzaG9lIEhhcmVcIiA9IGFjdGl2aXR5XzI0aCRTTk9XU0hPRUhBUkUsXG4gICAgICAgICAgICAgIFwiUml2ZXIgT3R0ZXJcIiA9IGFjdGl2aXR5XzI0aCRSSVZFUk9UVEVSLFxuICAgICAgICAgICAgICBcIk1pbmtcIiA9IGFjdGl2aXR5XzI0aCRNSU5LLFxuICAgICAgICAgICAgICBcIk90aGVyIFNtYWxsIE1hbW1hbFwiID0gYWN0aXZpdHlfMjRoJE9USEVSU01BTExNQU1NQUwsXG4gICAgICAgICAgICAgIFwiT3Bvc3N1bVwiID0gYWN0aXZpdHlfMjRoJE9QT1NTVU0pXG5cbmNsb2NrPC1jKDA6MjMpXG5jbG9jazI0LnBsb3QoZGF0YSwgY2xvY2ssIHNob3cuZ3JpZCA9IFQsIGx3ZCA9IDIsIGxpbmUuY29sID0gXCJibHVlXCIsIGNleC5sYWIgPSAwLjUpXG5cbn0pXG5cbn1cblxuIyBSdW4gdGhlIGFwcCAtLS0tXG5zaGlueUFwcCh1aSA9IHVpLCBzZXJ2ZXIgPSBzZXJ2ZXIpXG5cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm0obGlzdD1scygpKVxubGlicmFyeShzaGlueSlcbmBgYCJ9 -->
 <pre class="r"><code>rm(list=ls())
-library(shiny)
-library(dplyr)
+library(shiny)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdodG1sdG9vbHMnOlxuICBtZXRob2QgICAgICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWwgICAgICAgICAgIHRvb2xzOnJzdHVkaW9cbiAgcHJpbnQuc2hpbnkudGFnICAgICAgdG9vbHM6cnN0dWRpb1xuICBwcmludC5zaGlueS50YWcubGlzdCB0b29sczpyc3R1ZGlvXG4ifQ== -->
+<pre><code>Registered S3 methods overwritten by &#39;htmltools&#39;:
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeSh0aWR5cilcbmxpYnJhcnkocmVhZHIpXG5saWJyYXJ5KGx1YnJpZGF0ZSlcbmxpYnJhcnkoY2hyb24pICN3b3JrcyB3aXRoIGNocm9ub2xvZ2ljYWwgb2JqZWN0cyBsaWtlIGRhdGVzIGFuZCB0aW1lc1xubGlicmFyeShyZXNoYXBlKSAjcmVzdHJ1Y3R1cmVzIGFuZCBhZ2dyZWdhdGVzIGRhdGEgaW4gYSBmbGV4aWJsZSB3YXlcbmxpYnJhcnkodmVnYW4pICNlY29sb2dpY2FsIGFuYWx5c2lzXG5saWJyYXJ5KHBsb3RyaXgpICN2aXN1YWxpemUgY2lyY3VsYXIgZGF0YVxubGlicmFyeShnZ3Bsb3QyKSAjcHJvZHVjaW5nIGdyYXBoaWNzXG5saWJyYXJ5KG1hcHRvb2xzKSAjcHJvZHVjZSBtYXBzIHVzaW5nIEdJUyBsYXllcnNcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)
 library(tidyverse)
 library(tidyr)
 library(readr)
@@ -1765,108 +1775,94 @@ library(reshape) #restructures and aggregates data in a flexible way
 library(vegan) #ecological analysis
 library(plotrix) #visualize circular data
 library(ggplot2) #producing graphics
-library(maptools) #produce maps using GIS layers
-
-# First, let&#39;s finally figure out this activity chart! Need to load the TEAM library 1.7.R to get the functions we will use to make the activity chart
-source(&quot;~/Dropbox/Zooniverse_work/Camera_Trapping_Ch5_Work/TEAM library 1.7.R&quot;)
-
-#Now, following the Chapter 5 code, hopefully we can get this work. I think we need the data that came from the species accumulation curve because that has time data associated with the detections. Let&#39;s load that data too. 
-masterDF &lt;- read_csv(&quot;~/Documents/Kate_ThesisCode/masterDF_test.csv&quot;)
-dump&lt;-which(masterDF$bin == &quot;NOTHINGHERE&quot; | masterDF$bin == &quot;SOMETHINGHERE&quot; | masterDF$bin == &quot;HUMAN&quot; | masterDF$bin == &quot;GROUSERUFFED&quot; | masterDF$bin == &quot;CROWORRAVEN&quot; | masterDF$bin == &quot;OTHERBIRD&quot; | masterDF$bin == &quot;DOMESTICDOG&quot; | masterDF$bin == &quot;OWL&quot; | masterDF$bin == &quot;BLUEJAY&quot; | masterDF$bin == &quot;TURKEY&quot; | masterDF$bin == &quot;GOOSEWILD&quot;)
+library(maptools) #produce maps using GIS layers</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBzcFxuQ2hlY2tpbmcgcmdlb3MgYXZhaWxhYmlsaXR5OiBGQUxTRVxuIFx0Tm90ZTogd2hlbiByZ2VvcyBpcyBub3QgYXZhaWxhYmxlLCBwb2x5Z29uIGdlb21ldHJ5IFx0Y29tcHV0YXRpb25zIGluIG1hcHRvb2xzIGRlcGVuZCBvbiBncGNsaWIsXG4gXHR3aGljaCBoYXMgYSByZXN0cmljdGVkIGxpY2VuY2UuIEl0IGlzIGRpc2FibGVkIGJ5IGRlZmF1bHQ7XG4gXHR0byBlbmFibGUgZ3BjbGliLCB0eXBlIGdwY2xpYlBlcm1pdCgpXG4ifQ== -->
+<pre><code>Loading required package: sp
+Checking rgeos availability: FALSE
+    Note: when rgeos is not available, polygon geometry     computations in maptools depend on gpclib,
+    which has a restricted licence. It is disabled by default;
+    to enable gpclib, type gpclibPermit()</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>First, let’s finally figure out this activity chart! Need to load the TEAM library 1.7.R to get the functions we will use to make the activity chart</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwifi9Ecm9wYm94L1IvWm9vbml2ZXJzZV93b3JrL0NhbWVyYV9UcmFwcGluZ19DaDVfV29yay9URUFNIGxpYnJhcnkgMS43LlJcIilcbmBgYCJ9 -->
+<pre class="r"><code>source(&quot;~/Dropbox/R/Zooniverse_work/Camera_Trapping_Ch5_Work/TEAM library 1.7.R&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Now, following the Chapter 5 code, hopefully we can get this work. I think we need the data that came from the species accumulation curve because that has time data associated with the detections. Let’s load that data too.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFzdGVyREYgPC0gcmVhZF9jc3YoXCJ+L0Ryb3Bib3gvUi9ab29uaXZlcnNlX3dvcmsvS2F0ZS9EYXRhL21hc3RlckRGX3Rlc3QuY3N2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>masterDF &lt;- read_csv(&quot;~/Dropbox/R/Zooniverse_work/Kate/Data/masterDF_test.csv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTWlzc2luZyBjb2x1bW4gbmFtZXMgZmlsbGVkIGluOiAnWDEnIFsxXSwgJ1gxMicgWzEyXSwgJ1gxMycgWzEzXVBhcnNlZCB3aXRoIGNvbHVtbiBzcGVjaWZpY2F0aW9uOlxuY29scyhcbiAgWDEgPSBjb2xfZG91YmxlKCksXG4gIFNhbXBsaW5nLlVuaXQuTmFtZSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgRXZlbnQgPSBjb2xfY2hhcmFjdGVyKCksXG4gIHRkLnBob3RvID0gY29sX2NoYXJhY3RlcigpLFxuICBuZGF5cyA9IGNvbF9kb3VibGUoKSxcbiAgU3RhcnQuRGF0ZSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgRW5kLkRhdGUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIGJpbiA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgUGhvdG8uRGF0ZSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgUGhvdG8uVGltZSA9IGNvbF90aW1lKGZvcm1hdCA9IFwiXCIpLFxuICByb3VuZCA9IGNvbF9kb3VibGUoKSxcbiAgWDEyID0gY29sX2xvZ2ljYWwoKSxcbiAgWDEzID0gY29sX2RvdWJsZSgpXG4pXG4ifQ== -->
+<pre><code>Missing column names filled in: &#39;X1&#39; [1], &#39;X12&#39; [12], &#39;X13&#39; [13]Parsed with column specification:
+cols(
+  X1 = col_double(),
+  Sampling.Unit.Name = col_character(),
+  Event = col_character(),
+  td.photo = col_character(),
+  ndays = col_double(),
+  Start.Date = col_character(),
+  End.Date = col_character(),
+  bin = col_character(),
+  Photo.Date = col_character(),
+  Photo.Time = col_time(format = &quot;&quot;),
+  round = col_double(),
+  X12 = col_logical(),
+  X13 = col_double()
+)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZHVtcDwtd2hpY2gobWFzdGVyREYkYmluID09IFwiTk9USElOR0hFUkVcIiB8IG1hc3RlckRGJGJpbiA9PSBcIlNPTUVUSElOR0hFUkVcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkhVTUFOXCIgfCBtYXN0ZXJERiRiaW4gPT0gXCJHUk9VU0VSVUZGRURcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkNST1dPUlJBVkVOXCIgfCBtYXN0ZXJERiRiaW4gPT0gXCJPVEhFUkJJUkRcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkRPTUVTVElDRE9HXCIgfCBtYXN0ZXJERiRiaW4gPT0gXCJPV0xcIiB8IG1hc3RlckRGJGJpbiA9PSBcIkJMVUVKQVlcIiB8IG1hc3RlckRGJGJpbiA9PSBcIlRVUktFWVwiIHwgbWFzdGVyREYkYmluID09IFwiR09PU0VXSUxEXCIpXG5tYXN0ZXJERjwtbWFzdGVyREZbLWR1bXAsXVxubWFzdGVyREYkU3RhcnQuRGF0ZTwtIG1keShtYXN0ZXJERiRTdGFydC5EYXRlKVxubWFzdGVyREYkRW5kLkRhdGU8LW1keShtYXN0ZXJERiRFbmQuRGF0ZSlcbm1hc3RlckRGJG5kYXlzPC0gZGlmZnRpbWUobWFzdGVyREYkRW5kLkRhdGUsIG1hc3RlckRGJFN0YXJ0LkRhdGUgLCB1bml0cyA9IGMoXCJkYXlzXCIpKVxuXG5tYXN0ZXJERjwtbWFzdGVyREZbLDI6MTFdXG5gYGAifQ== -->
+<pre class="r"><code>dump&lt;-which(masterDF$bin == &quot;NOTHINGHERE&quot; | masterDF$bin == &quot;SOMETHINGHERE&quot; | masterDF$bin == &quot;HUMAN&quot; | masterDF$bin == &quot;GROUSERUFFED&quot; | masterDF$bin == &quot;CROWORRAVEN&quot; | masterDF$bin == &quot;OTHERBIRD&quot; | masterDF$bin == &quot;DOMESTICDOG&quot; | masterDF$bin == &quot;OWL&quot; | masterDF$bin == &quot;BLUEJAY&quot; | masterDF$bin == &quot;TURKEY&quot; | masterDF$bin == &quot;GOOSEWILD&quot;)
 masterDF&lt;-masterDF[-dump,]
 masterDF$Start.Date&lt;- mdy(masterDF$Start.Date)
 masterDF$End.Date&lt;-mdy(masterDF$End.Date)
 masterDF$ndays&lt;- difftime(masterDF$End.Date, masterDF$Start.Date , units = c(&quot;days&quot;))
 
-masterDF&lt;-masterDF[,2:11]
-
-
-SpeciesAcc&lt;-masterDF
+masterDF&lt;-masterDF[,2:11]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Now work on the species accumulation</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3BlY2llc0FjYzwtbWFzdGVyREZcblNwZWNpZXNBY2MkU2FtcGxpbmcuRXZlbnQ8LTIwMjBcblNwZWNpZXNBY2M8LSBTcGVjaWVzQWNjWywtKDEwKV0gI2dldCByaWQgb2Ygcm91bmQgbnVtYmVyIGZyb20gREZcblxuXG5TcGVjaWVzQWNjJHRkLnBob3RvPC1hcy5QT1NJWGN0KFNwZWNpZXNBY2MkdGQucGhvdG8sZm9ybWF0PVwiJVk6JW06JWQgJUg6JU06JVNcIilcblNwZWNpZXNBY2MkUGhvdG8uRGF0ZTwtbWR5KFNwZWNpZXNBY2MkUGhvdG8uRGF0ZSlcblNwZWNpZXNBY2MkUGhvdG8uVGltZTwtaG1zKFNwZWNpZXNBY2MkUGhvdG8uVGltZSlcbmBgYCJ9 -->
+<pre class="r"><code>SpeciesAcc&lt;-masterDF
 SpeciesAcc$Sampling.Event&lt;-2020
-SpeciesAcc&lt;- SpeciesAcc[,-(10)]
+SpeciesAcc&lt;- SpeciesAcc[,-(10)] #get rid of round number from DF
 
 
 SpeciesAcc$td.photo&lt;-as.POSIXct(SpeciesAcc$td.photo,format=&quot;%Y:%m:%d %H:%M:%S&quot;)
 SpeciesAcc$Photo.Date&lt;-mdy(SpeciesAcc$Photo.Date)
-SpeciesAcc$Photo.Time&lt;-hms(SpeciesAcc$Photo.Time)
-
-specActivity&lt;-SpeciesAcc
+SpeciesAcc$Photo.Time&lt;-hms(SpeciesAcc$Photo.Time)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU29tZSBzdHJpbmdzIGZhaWxlZCB0byBwYXJzZSwgb3IgYWxsIHN0cmluZ3MgYXJlIE5Bc1xuIn0= -->
+<pre><code>Some strings failed to parse, or all strings are NAs</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>And activity</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3BlY0FjdGl2aXR5PC1TcGVjaWVzQWNjXG5cbnNwZWNBY3Rpdml0eSRQaG90by5UaW1lPC1wZXJpb2RfdG9fc2Vjb25kcyhzcGVjQWN0aXZpdHkkUGhvdG8uVGltZSlcblxuYWN0aXZpdHlfMjRoPC1ldmVudHMuaG91cnMoc3BlY0FjdGl2aXR5KSAjUG90ZW50aWFsIGVycm9yIGhlcmUgc2luY2Ugd2UgaGFkIHNvbWUgTkFzLiBSZXBvcnRpbmcgc2Vjb25kcyBub3QgMDA6MDA6MDBcbmBgYCJ9 -->
+<pre class="r"><code>specActivity&lt;-SpeciesAcc
 
 specActivity$Photo.Time&lt;-period_to_seconds(specActivity$Photo.Time)
 
-activity_24h&lt;-events.hours(specActivity) #Potential error here since we had some NAs. Reporting seconds not 00:00:00
-
-
-
-ui &lt;- fluidPage(
-
-  # App title ----
-  titlePanel(&quot;Mammal Distribution by Forset Type&quot;),
-
-  # Sidebar layout with input and output definitions ----
-  sidebarLayout(
-
-    # Sidebar panel for inputs ----
-    sidebarPanel(
-
-      # Input: Slider for the number of bins ----
-      selectInput(&quot;species&quot;, h3(&quot;Choose your Species&quot;),
-                  choices = c(&quot;White-tailed Deer&quot;, &quot;Chipmunk&quot;, &quot;Coyote&quot;, &quot;Fisher&quot;, &quot;Raccoon&quot;, &quot;Red Squirrel&quot;, &quot;Other Small Mammal&quot;, &quot;Gray Squirrel&quot;, &quot;Black Bear&quot;, &quot;Red Fox&quot;, &quot;Porcupine&quot;, &quot;Bobcat&quot;, &quot;Opossum&quot;, &quot;Weasel&quot;, &quot;Striped Skunk&quot;, &quot;Flying Squirrel&quot;, &quot;Snowshoe Hare&quot;, &quot;River Otter&quot;, &quot;Mink&quot;), selected = &quot;White-tailed Deer&quot;),
-        
-),
-    # Main panel for displaying outputs ----
-    mainPanel(
-
-      # Output: Histogram ----
-     leafletOutput(&quot;activity&quot;)
-
-    )
-  )
-)
-
-
-#define server logic ----
-server&lt;-function(input, output) {
-
-  output$activity&lt;-renderPlot({
-    
-    data&lt;-switch(input$species, 
-                      &quot;White-tailed Deer&quot; = activity_24h$DEERWHITETAILED,
-                &quot;Chipmunk&quot; = activity_24h$CHIPMUNK,
-               &quot;Coyote&quot; = activity_24h$COYOTE,
-                &quot;Fisher&quot; = activity_24h$FISHER,
-                &quot;Raccoon&quot; = activity_24h$RACCOON,
-                &quot;Red Squirrel&quot; = activity_24h$SQUIRRELRED,
-              &quot;Gray Squirrel&quot; = activity_24h$SQUIRRELGRAY,
-              &quot;Black Bear&quot; = activity_24h$BLACKBEAR,
-              &quot;Red Fox&quot; = activity_24h$FOXRED,
-              &quot;Porcupine&quot; = activity_24h$PORCUPINE,
-              &quot;Bobcat&quot; = activity_24h$BOBCAT,
-              &quot;Weasel&quot; = activity_24h$WEASEL,
-              &quot;Striped Skunk&quot; = activity_24h$SKUNKSTRIPED,
-              &quot;Flying Squirrel&quot; = activity_24h$SQUIRRELFLYING,
-              &quot;Snowshoe Hare&quot; = activity_24h$SNOWSHOEHARE,
-              &quot;River Otter&quot; = activity_24h$RIVEROTTER,
-              &quot;Mink&quot; = activity_24h$MINK,
-              &quot;Other Small Mammal&quot; = activity_24h$OTHERSMALLMAMMAL,
-              &quot;Opossum&quot; = activity_24h$OPOSSUM)
-
-clock&lt;-c(0:23)
-clock24.plot(data, clock, show.grid = T, lwd = 2, line.col = &quot;blue&quot;, cex.lab = 0.5)
-
-})
-
-}
-
-# Run the app ----
-shinyApp(ui = ui, server = server)
-</code></pre>
+activity_24h&lt;-events.hours(specActivity) #Potential error here since we had some NAs. Reporting seconds not 00:00:00</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Now go over to app.R to run the shiny app</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWN0aXZpdHkgcGF0dGVybnMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCk1ha2UgYSBTaGlueSBhcHAgdGhhdCBzaG93cyBhY3Rpdml0eSBwYXR0ZXJucyBieSBzcGVjaWVzCmBgYHtyfQpybShsaXN0PWxzKCkpCmxpYnJhcnkoc2hpbnkpCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KHRpZHlyKQpsaWJyYXJ5KHJlYWRyKQpsaWJyYXJ5KGx1YnJpZGF0ZSkKbGlicmFyeShjaHJvbikgI3dvcmtzIHdpdGggY2hyb25vbG9naWNhbCBvYmplY3RzIGxpa2UgZGF0ZXMgYW5kIHRpbWVzCmxpYnJhcnkocmVzaGFwZSkgI3Jlc3RydWN0dXJlcyBhbmQgYWdncmVnYXRlcyBkYXRhIGluIGEgZmxleGlibGUgd2F5CmxpYnJhcnkodmVnYW4pICNlY29sb2dpY2FsIGFuYWx5c2lzCmxpYnJhcnkocGxvdHJpeCkgI3Zpc3VhbGl6ZSBjaXJjdWxhciBkYXRhCmxpYnJhcnkoZ2dwbG90MikgI3Byb2R1Y2luZyBncmFwaGljcwpsaWJyYXJ5KG1hcHRvb2xzKSAjcHJvZHVjZSBtYXBzIHVzaW5nIEdJUyBsYXllcnMKCiMgRmlyc3QsIGxldCdzIGZpbmFsbHkgZmlndXJlIG91dCB0aGlzIGFjdGl2aXR5IGNoYXJ0ISBOZWVkIHRvIGxvYWQgdGhlIFRFQU0gbGlicmFyeSAxLjcuUiB0byBnZXQgdGhlIGZ1bmN0aW9ucyB3ZSB3aWxsIHVzZSB0byBtYWtlIHRoZSBhY3Rpdml0eSBjaGFydApzb3VyY2UoIn4vRHJvcGJveC9ab29uaXZlcnNlX3dvcmsvQ2FtZXJhX1RyYXBwaW5nX0NoNV9Xb3JrL1RFQU0gbGlicmFyeSAxLjcuUiIpCgojTm93LCBmb2xsb3dpbmcgdGhlIENoYXB0ZXIgNSBjb2RlLCBob3BlZnVsbHkgd2UgY2FuIGdldCB0aGlzIHdvcmsuIEkgdGhpbmsgd2UgbmVlZCB0aGUgZGF0YSB0aGF0IGNhbWUgZnJvbSB0aGUgc3BlY2llcyBhY2N1bXVsYXRpb24gY3VydmUgYmVjYXVzZSB0aGF0IGhhcyB0aW1lIGRhdGEgYXNzb2NpYXRlZCB3aXRoIHRoZSBkZXRlY3Rpb25zLiBMZXQncyBsb2FkIHRoYXQgZGF0YSB0b28uIAptYXN0ZXJERiA8LSByZWFkX2Nzdigifi9Eb2N1bWVudHMvS2F0ZV9UaGVzaXNDb2RlL21hc3RlckRGX3Rlc3QuY3N2IikKZHVtcDwtd2hpY2gobWFzdGVyREYkYmluID09ICJOT1RISU5HSEVSRSIgfCBtYXN0ZXJERiRiaW4gPT0gIlNPTUVUSElOR0hFUkUiIHwgbWFzdGVyREYkYmluID09ICJIVU1BTiIgfCBtYXN0ZXJERiRiaW4gPT0gIkdST1VTRVJVRkZFRCIgfCBtYXN0ZXJERiRiaW4gPT0gIkNST1dPUlJBVkVOIiB8IG1hc3RlckRGJGJpbiA9PSAiT1RIRVJCSVJEIiB8IG1hc3RlckRGJGJpbiA9PSAiRE9NRVNUSUNET0ciIHwgbWFzdGVyREYkYmluID09ICJPV0wiIHwgbWFzdGVyREYkYmluID09ICJCTFVFSkFZIiB8IG1hc3RlckRGJGJpbiA9PSAiVFVSS0VZIiB8IG1hc3RlckRGJGJpbiA9PSAiR09PU0VXSUxEIikKbWFzdGVyREY8LW1hc3RlckRGWy1kdW1wLF0KbWFzdGVyREYkU3RhcnQuRGF0ZTwtIG1keShtYXN0ZXJERiRTdGFydC5EYXRlKQptYXN0ZXJERiRFbmQuRGF0ZTwtbWR5KG1hc3RlckRGJEVuZC5EYXRlKQptYXN0ZXJERiRuZGF5czwtIGRpZmZ0aW1lKG1hc3RlckRGJEVuZC5EYXRlLCBtYXN0ZXJERiRTdGFydC5EYXRlICwgdW5pdHMgPSBjKCJkYXlzIikpCgptYXN0ZXJERjwtbWFzdGVyREZbLDI6MTFdCgoKU3BlY2llc0FjYzwtbWFzdGVyREYKU3BlY2llc0FjYyRTYW1wbGluZy5FdmVudDwtMjAyMApTcGVjaWVzQWNjPC0gU3BlY2llc0FjY1ssLSgxMCldCgoKU3BlY2llc0FjYyR0ZC5waG90bzwtYXMuUE9TSVhjdChTcGVjaWVzQWNjJHRkLnBob3RvLGZvcm1hdD0iJVk6JW06JWQgJUg6JU06JVMiKQpTcGVjaWVzQWNjJFBob3RvLkRhdGU8LW1keShTcGVjaWVzQWNjJFBob3RvLkRhdGUpClNwZWNpZXNBY2MkUGhvdG8uVGltZTwtaG1zKFNwZWNpZXNBY2MkUGhvdG8uVGltZSkKCnNwZWNBY3Rpdml0eTwtU3BlY2llc0FjYwoKc3BlY0FjdGl2aXR5JFBob3RvLlRpbWU8LXBlcmlvZF90b19zZWNvbmRzKHNwZWNBY3Rpdml0eSRQaG90by5UaW1lKQoKYWN0aXZpdHlfMjRoPC1ldmVudHMuaG91cnMoc3BlY0FjdGl2aXR5KSAjUG90ZW50aWFsIGVycm9yIGhlcmUgc2luY2Ugd2UgaGFkIHNvbWUgTkFzLiBSZXBvcnRpbmcgc2Vjb25kcyBub3QgMDA6MDA6MDAKCgoKdWkgPC0gZmx1aWRQYWdlKAoKICAjIEFwcCB0aXRsZSAtLS0tCiAgdGl0bGVQYW5lbCgiTWFtbWFsIERpc3RyaWJ1dGlvbiBieSBGb3JzZXQgVHlwZSIpLAoKICAjIFNpZGViYXIgbGF5b3V0IHdpdGggaW5wdXQgYW5kIG91dHB1dCBkZWZpbml0aW9ucyAtLS0tCiAgc2lkZWJhckxheW91dCgKCiAgICAjIFNpZGViYXIgcGFuZWwgZm9yIGlucHV0cyAtLS0tCiAgICBzaWRlYmFyUGFuZWwoCgogICAgICAjIElucHV0OiBTbGlkZXIgZm9yIHRoZSBudW1iZXIgb2YgYmlucyAtLS0tCiAgICAgIHNlbGVjdElucHV0KCJzcGVjaWVzIiwgaDMoIkNob29zZSB5b3VyIFNwZWNpZXMiKSwKICAgICAgICAgICAgICAgICAgY2hvaWNlcyA9IGMoIldoaXRlLXRhaWxlZCBEZWVyIiwgIkNoaXBtdW5rIiwgIkNveW90ZSIsICJGaXNoZXIiLCAiUmFjY29vbiIsICJSZWQgU3F1aXJyZWwiLCAiT3RoZXIgU21hbGwgTWFtbWFsIiwgIkdyYXkgU3F1aXJyZWwiLCAiQmxhY2sgQmVhciIsICJSZWQgRm94IiwgIlBvcmN1cGluZSIsICJCb2JjYXQiLCAiT3Bvc3N1bSIsICJXZWFzZWwiLCAiU3RyaXBlZCBTa3VuayIsICJGbHlpbmcgU3F1aXJyZWwiLCAiU25vd3Nob2UgSGFyZSIsICJSaXZlciBPdHRlciIsICJNaW5rIiksIHNlbGVjdGVkID0gIldoaXRlLXRhaWxlZCBEZWVyIiksCiAgICAgICAgCiksCiAgICAjIE1haW4gcGFuZWwgZm9yIGRpc3BsYXlpbmcgb3V0cHV0cyAtLS0tCiAgICBtYWluUGFuZWwoCgogICAgICAjIE91dHB1dDogSGlzdG9ncmFtIC0tLS0KICAgICBsZWFmbGV0T3V0cHV0KCJhY3Rpdml0eSIpCgogICAgKQogICkKKQoKCiNkZWZpbmUgc2VydmVyIGxvZ2ljIC0tLS0Kc2VydmVyPC1mdW5jdGlvbihpbnB1dCwgb3V0cHV0KSB7CgogIG91dHB1dCRhY3Rpdml0eTwtcmVuZGVyUGxvdCh7CiAgICAKICAgIGRhdGE8LXN3aXRjaChpbnB1dCRzcGVjaWVzLCAKICAgICAgICAgICAgICAgICAgICAgICJXaGl0ZS10YWlsZWQgRGVlciIgPSBhY3Rpdml0eV8yNGgkREVFUldISVRFVEFJTEVELAogICAgICAgICAgICAgICAgIkNoaXBtdW5rIiA9IGFjdGl2aXR5XzI0aCRDSElQTVVOSywKICAgICAgICAgICAgICAgIkNveW90ZSIgPSBhY3Rpdml0eV8yNGgkQ09ZT1RFLAogICAgICAgICAgICAgICAgIkZpc2hlciIgPSBhY3Rpdml0eV8yNGgkRklTSEVSLAogICAgICAgICAgICAgICAgIlJhY2Nvb24iID0gYWN0aXZpdHlfMjRoJFJBQ0NPT04sCiAgICAgICAgICAgICAgICAiUmVkIFNxdWlycmVsIiA9IGFjdGl2aXR5XzI0aCRTUVVJUlJFTFJFRCwKICAgICAgICAgICAgICAiR3JheSBTcXVpcnJlbCIgPSBhY3Rpdml0eV8yNGgkU1FVSVJSRUxHUkFZLAogICAgICAgICAgICAgICJCbGFjayBCZWFyIiA9IGFjdGl2aXR5XzI0aCRCTEFDS0JFQVIsCiAgICAgICAgICAgICAgIlJlZCBGb3giID0gYWN0aXZpdHlfMjRoJEZPWFJFRCwKICAgICAgICAgICAgICAiUG9yY3VwaW5lIiA9IGFjdGl2aXR5XzI0aCRQT1JDVVBJTkUsCiAgICAgICAgICAgICAgIkJvYmNhdCIgPSBhY3Rpdml0eV8yNGgkQk9CQ0FULAogICAgICAgICAgICAgICJXZWFzZWwiID0gYWN0aXZpdHlfMjRoJFdFQVNFTCwKICAgICAgICAgICAgICAiU3RyaXBlZCBTa3VuayIgPSBhY3Rpdml0eV8yNGgkU0tVTktTVFJJUEVELAogICAgICAgICAgICAgICJGbHlpbmcgU3F1aXJyZWwiID0gYWN0aXZpdHlfMjRoJFNRVUlSUkVMRkxZSU5HLAogICAgICAgICAgICAgICJTbm93c2hvZSBIYXJlIiA9IGFjdGl2aXR5XzI0aCRTTk9XU0hPRUhBUkUsCiAgICAgICAgICAgICAgIlJpdmVyIE90dGVyIiA9IGFjdGl2aXR5XzI0aCRSSVZFUk9UVEVSLAogICAgICAgICAgICAgICJNaW5rIiA9IGFjdGl2aXR5XzI0aCRNSU5LLAogICAgICAgICAgICAgICJPdGhlciBTbWFsbCBNYW1tYWwiID0gYWN0aXZpdHlfMjRoJE9USEVSU01BTExNQU1NQUwsCiAgICAgICAgICAgICAgIk9wb3NzdW0iID0gYWN0aXZpdHlfMjRoJE9QT1NTVU0pCgpjbG9jazwtYygwOjIzKQpjbG9jazI0LnBsb3QoZGF0YSwgY2xvY2ssIHNob3cuZ3JpZCA9IFQsIGx3ZCA9IDIsIGxpbmUuY29sID0gImJsdWUiLCBjZXgubGFiID0gMC41KQoKfSkKCn0KCiMgUnVuIHRoZSBhcHAgLS0tLQpzaGlueUFwcCh1aSA9IHVpLCBzZXJ2ZXIgPSBzZXJ2ZXIpCgpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWN0aXZpdHkgcGF0dGVybnMiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCk1ha2UgYSBTaGlueSBhcHAgdGhhdCBzaG93cyBhY3Rpdml0eSBwYXR0ZXJucyBieSBzcGVjaWVzCgpTZXQgdXAgcHJvamVjdDoKYGBge3J9CnJtKGxpc3Q9bHMoKSkKbGlicmFyeShzaGlueSkKbGlicmFyeShkcGx5cikKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkodGlkeXIpCmxpYnJhcnkocmVhZHIpCmxpYnJhcnkobHVicmlkYXRlKQpsaWJyYXJ5KGNocm9uKSAjd29ya3Mgd2l0aCBjaHJvbm9sb2dpY2FsIG9iamVjdHMgbGlrZSBkYXRlcyBhbmQgdGltZXMKbGlicmFyeShyZXNoYXBlKSAjcmVzdHJ1Y3R1cmVzIGFuZCBhZ2dyZWdhdGVzIGRhdGEgaW4gYSBmbGV4aWJsZSB3YXkKbGlicmFyeSh2ZWdhbikgI2Vjb2xvZ2ljYWwgYW5hbHlzaXMKbGlicmFyeShwbG90cml4KSAjdmlzdWFsaXplIGNpcmN1bGFyIGRhdGEKbGlicmFyeShnZ3Bsb3QyKSAjcHJvZHVjaW5nIGdyYXBoaWNzCmxpYnJhcnkobWFwdG9vbHMpICNwcm9kdWNlIG1hcHMgdXNpbmcgR0lTIGxheWVycwpgYGAKRmlyc3QsIGxldCdzIGZpbmFsbHkgZmlndXJlIG91dCB0aGlzIGFjdGl2aXR5IGNoYXJ0ISBOZWVkIHRvIGxvYWQgdGhlIFRFQU0gbGlicmFyeSAxLjcuUiB0byBnZXQgdGhlIGZ1bmN0aW9ucyB3ZSB3aWxsIHVzZSB0byBtYWtlIHRoZSBhY3Rpdml0eSBjaGFydApgYGB7cn0Kc291cmNlKCJ+L0Ryb3Bib3gvUi9ab29uaXZlcnNlX3dvcmsvQ2FtZXJhX1RyYXBwaW5nX0NoNV9Xb3JrL1RFQU0gbGlicmFyeSAxLjcuUiIpCmBgYApOb3csIGZvbGxvd2luZyB0aGUgQ2hhcHRlciA1IGNvZGUsIGhvcGVmdWxseSB3ZSBjYW4gZ2V0IHRoaXMgd29yay4gSSB0aGluayB3ZSBuZWVkIHRoZSBkYXRhIHRoYXQgY2FtZSBmcm9tIHRoZSBzcGVjaWVzIGFjY3VtdWxhdGlvbiBjdXJ2ZSBiZWNhdXNlIHRoYXQgaGFzIHRpbWUgZGF0YSBhc3NvY2lhdGVkIHdpdGggdGhlIGRldGVjdGlvbnMuIExldCdzIGxvYWQgdGhhdCBkYXRhIHRvby4gCgoKYGBge3J9Cm1hc3RlckRGIDwtIHJlYWRfY3N2KCJ+L0Ryb3Bib3gvUi9ab29uaXZlcnNlX3dvcmsvS2F0ZS9EYXRhL21hc3RlckRGX3Rlc3QuY3N2IikKZHVtcDwtd2hpY2gobWFzdGVyREYkYmluID09ICJOT1RISU5HSEVSRSIgfCBtYXN0ZXJERiRiaW4gPT0gIlNPTUVUSElOR0hFUkUiIHwgbWFzdGVyREYkYmluID09ICJIVU1BTiIgfCBtYXN0ZXJERiRiaW4gPT0gIkdST1VTRVJVRkZFRCIgfCBtYXN0ZXJERiRiaW4gPT0gIkNST1dPUlJBVkVOIiB8IG1hc3RlckRGJGJpbiA9PSAiT1RIRVJCSVJEIiB8IG1hc3RlckRGJGJpbiA9PSAiRE9NRVNUSUNET0ciIHwgbWFzdGVyREYkYmluID09ICJPV0wiIHwgbWFzdGVyREYkYmluID09ICJCTFVFSkFZIiB8IG1hc3RlckRGJGJpbiA9PSAiVFVSS0VZIiB8IG1hc3RlckRGJGJpbiA9PSAiR09PU0VXSUxEIikKbWFzdGVyREY8LW1hc3RlckRGWy1kdW1wLF0KbWFzdGVyREYkU3RhcnQuRGF0ZTwtIG1keShtYXN0ZXJERiRTdGFydC5EYXRlKQptYXN0ZXJERiRFbmQuRGF0ZTwtbWR5KG1hc3RlckRGJEVuZC5EYXRlKQptYXN0ZXJERiRuZGF5czwtIGRpZmZ0aW1lKG1hc3RlckRGJEVuZC5EYXRlLCBtYXN0ZXJERiRTdGFydC5EYXRlICwgdW5pdHMgPSBjKCJkYXlzIikpCgptYXN0ZXJERjwtbWFzdGVyREZbLDI6MTFdCmBgYAoKTm93IHdvcmsgb24gdGhlIHNwZWNpZXMgYWNjdW11bGF0aW9uCmBgYHtyfQpTcGVjaWVzQWNjPC1tYXN0ZXJERgpTcGVjaWVzQWNjJFNhbXBsaW5nLkV2ZW50PC0yMDIwClNwZWNpZXNBY2M8LSBTcGVjaWVzQWNjWywtKDEwKV0gI2dldCByaWQgb2Ygcm91bmQgbnVtYmVyIGZyb20gREYKCgpTcGVjaWVzQWNjJHRkLnBob3RvPC1hcy5QT1NJWGN0KFNwZWNpZXNBY2MkdGQucGhvdG8sZm9ybWF0PSIlWTolbTolZCAlSDolTTolUyIpClNwZWNpZXNBY2MkUGhvdG8uRGF0ZTwtbWR5KFNwZWNpZXNBY2MkUGhvdG8uRGF0ZSkKU3BlY2llc0FjYyRQaG90by5UaW1lPC1obXMoU3BlY2llc0FjYyRQaG90by5UaW1lKQpgYGAKQW5kIGFjdGl2aXR5CmBgYHtyfQpzcGVjQWN0aXZpdHk8LVNwZWNpZXNBY2MKCnNwZWNBY3Rpdml0eSRQaG90by5UaW1lPC1wZXJpb2RfdG9fc2Vjb25kcyhzcGVjQWN0aXZpdHkkUGhvdG8uVGltZSkKCmFjdGl2aXR5XzI0aDwtZXZlbnRzLmhvdXJzKHNwZWNBY3Rpdml0eSkgI1BvdGVudGlhbCBlcnJvciBoZXJlIHNpbmNlIHdlIGhhZCBzb21lIE5Bcy4gUmVwb3J0aW5nIHNlY29uZHMgbm90IDAwOjAwOjAwCmBgYApOb3cgZ28gb3ZlciB0byBhcHAuUiB0byBydW4gdGhlIHNoaW55IGFwcAoKCgo=</div>
 
 
 
@@ -1913,7 +1909,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("activity.Rmd");
+  window.initializeSourceEmbed("Activity.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

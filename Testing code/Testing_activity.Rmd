@@ -1,0 +1,122 @@
+---
+title: "Activity patterns"
+output: html_notebook
+---
+
+Testing code to plot activity by species
+
+Set up project:
+```{r}
+rm(list=ls())
+library(dplyr)
+library(tidyverse)
+library(readr)
+library(lubridate)
+library(chron) #works with chronological objects like dates and times
+library(reshape) #restructures and aggregates data in a flexible way
+library(vegan) #ecological analysis
+library(plotrix) #visualize circular data
+library(ggplot2) #producing graphics
+
+```
+First, let's finally figure out this activity chart! Need to load the TEAM library 1.7.R to get the functions we will use to make the activity chart
+```{r}
+source("~/Dropbox/R/Zooniverse_work/Camera_Trapping_Ch5_Work/TEAM library 1.7.R")
+```
+Now, following the Chapter 5 code, hopefully we can get this work. I think we need the data that came from the species accumulation curve because that has time data associated with the detections. Let's load that data too. 
+
+
+```{r}
+masterDF <- read_csv("~/Dropbox/R/Zooniverse_work/Kate/Data/masterDF_test.csv")
+```
+Now clean up the data to get rid of the nothing theres, something theres, birds, domestics:
+```{r}
+dump<-which(masterDF$bin == "NOTHINGHERE" | masterDF$bin == "SOMETHINGHERE" | masterDF$bin == "HUMAN" | masterDF$bin == "GROUSERUFFED" | masterDF$bin == "CROWORRAVEN" | masterDF$bin == "OTHERBIRD" | masterDF$bin == "DOMESTICDOG" | masterDF$bin == "OWL" | masterDF$bin == "BLUEJAY" | masterDF$bin == "TURKEY" | masterDF$bin == "GOOSEWILD")
+masterDF<-masterDF[-dump,]
+```
+Now convert some characters to dates:
+```{r}
+masterDF$Start.Date<- mdy(masterDF$Start.Date)
+masterDF$End.Date<-mdy(masterDF$End.Date)
+masterDF$ndays<- difftime(masterDF$End.Date, masterDF$Start.Date , units = c("days"))
+
+masterDF<-masterDF[,2:11] #get rid of the weird X1 column
+```
+
+Now work on species activity.
+
+
+```{r}
+Activity<-masterDF
+Activity$Sampling.Event<-2020 #adds field needed by TEAM functions
+Activity<- Activity[,-(10)] #get rid of round number from DF
+
+
+Activity$td.photo<-as.POSIXct(Activity$td.photo,format="%Y:%m:%d %H:%M:%S")
+Activity$Photo.Date<-mdy(Activity$Photo.Date)
+Activity$Photo.Time<-hms(Activity$Photo.Time)
+Activity$Photo.Time<-period_to_seconds(Activity$Photo.Time) #converts period to number of seconds; 0 seconds is midnight, 86400 is the number of seconds in a day so no value should be greater than that
+
+activity_24h<-events.hours(Activity) #TEAM function; creates matrix with first column as seconds of the day, remaining columns as species.  Indicates the number of detections at the particular time for each species.
+```
+Now add a column to Activity that assigns the hour corresponding to each Photo.Time.
+```{r}
+Activity$Hour<-Activity$Photo.Time/3600
+Activity$truncHour<-trunc(Activity$Hour)
+```
+Now add a "day vs. night" category for making the plot fancier
+
+```{r}
+Activity$TOD<-"night"
+day<-which(Activity$Hour > 5 & Activity$Hour < 19)
+Activity$TOD[day]<-"day"
+```
+
+
+Now let's take a look at the data and see if they make sense.
+
+Test case: What is the distribution of porcupine, deer, gray squirrel and rabbit observations over the course of a day?
+Porcupine first:
+
+```{r}
+Porky<-Activity %>% filter(bin == "PORCUPINE")
+ggplot(Porky, aes(truncHour))+
+  geom_histogram(bins = 24)
+```
+Now compare with the circular plot:
+```{r}
+porcSum<-Porky %>% group_by(truncHour) %>% summarize(
+  NumObs=length(Start.Date))
+  
+
+clock<-c(0:24)
+    PorcPlot<-clock24.plot(porcSum$NumObs, clock, show.grid = T, lwd = 2, line.col = "blue", cex.lab = 0.5)
+    PorcPlot
+
+```
+Can I color the "slices" so that b/w 18 and 6 is gray background? (to indicate "night"?)
+
+
+Can we do this for all species at once?
+
+```{r}
+Sum<-Activity %>% group_by(truncHour, bin) %>% summarize(
+  NumObs=length(Start.Date))
+  
+Porc<-filter(Sum, bin == "PORCUPINE")
+
+clock<-c(0:24)
+    PorcPlot<-clock24.plot(Porc$NumObs, clock, show.grid = T, lwd = 2, line.col = "blue", cex.lab = 0.5)
+    PorcPlot
+    
+```
+So, here's the lesson: don't need TEAM library or activity_24hour thing at all. Use the switch to filter the Sum data frame to the approrpriate species.
+
+
+
+
+
+
+
+
+
